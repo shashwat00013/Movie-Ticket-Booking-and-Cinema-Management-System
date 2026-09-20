@@ -1,0 +1,50 @@
+body{
+
+    background:#111;
+    color:white;
+    font-family:Arial;
+
+}
+
+
+.ticket{
+
+    width:400px;
+    margin:80px auto;
+    background:#222;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+
+}
+
+
+
+.ticket p{
+
+    text-align:left;
+    margin:15px;
+
+}
+
+
+
+.booking-id{
+
+    background:#e50914;
+    padding:15px;
+    margin:20px 0;
+
+}
+
+
+
+button{
+
+    padding:12px 30px;
+    background:#e50914;
+    color:white;
+    border:none;
+    border-radius:5px;
+
+}
