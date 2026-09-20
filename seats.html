@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shows & Seats - Movie Booking</title>
+
+    <link rel="stylesheet" href="css/seatmap.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">CineBook</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movie-details.html">Movies</a>
+            <a href="seats.html" class="active">Seats</a>
+        </nav>
+    </header>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <section class="page-heading">
+            <h1>Select Show & Seats</h1>
+            <p>Choose your preferred showtime and select your seats.</p>
+        </section>
+
+
+        <!-- Movie Information -->
+        <section class="movie-info">
+
+            <div class="movie-poster">
+                <div class="poster-placeholder">
+                    🎬
+                </div>
+            </div>
+
+            <div class="movie-details">
+                <h2>Avengers: Endgame</h2>
+
+                <p>
+                    <strong>Language:</strong> English
+                </p>
+
+                <p>
+                    <strong>Format:</strong> 2D
+                </p>
+
+                <p>
+                    <strong>Duration:</strong> 3h 2m
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Showtime Selection -->
+        <section class="show-section">
+
+            <h2>Select Showtime</h2>
+
+            <div class="showtimes">
+
+                <div class="show-card selected-show">
+                    <span>10:00 AM</span>
+                    <small>Morning</small>
+                </div>
+
+                <div class="show-card">
+                    <span>01:30 PM</span>
+                    <small>Afternoon</small>
+                </div>
+
+                <div class="show-card">
+                    <span>04:30 PM</span>
+                    <small>Evening</small>
+                </div>
+
+                <div class="show-card">
+                    <span>07:30 PM</span>
+                    <small>Evening</small>
+                </div>
+
+                <div class="show-card">
+                    <span>10:30 PM</span>
+                    <small>Night</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Seat Selection -->
+        <section class="seat-section">
+
+            <h2>Select Your Seats</h2>
+
+            <!-- Screen -->
+            <div class="screen">
+                SCREEN
+            </div>
+
+
+            <!-- Seat Legend -->
+            <div class="legend">
+
+                <div class="legend-item">
+                    <span class="seat available"></span>
+                    <span>Available</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="seat selected"></span>
+                    <span>Selected</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="seat booked"></span>
+                    <span>Booked</span>
+                </div>
+
+            </div>
+            <!-- Seat Map -->
+            <div class="seat-map">
+                <!-- Row A -->
+                <div class="seat-row">
+                    <span class="row-label">A</span>
+
+                    <div class="seat available">A1</div>
+                    <div class="seat available">A2</div>
+                    <div class="seat available">A3</div>
+                    <div class="seat available">A4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat booked">A5</div>
+                    <div class="seat available">A6</div>
+                    <div class="seat available">A7</div>
+                    <div class="seat available">A8</div>
+                </div>
+                <!-- Row B -->
+                <div class="seat-row">
+                    <span class="row-label">B</span>
+
+                    <div class="seat available">B1</div>
+                    <div class="seat selected">B2</div>
+                    <div class="seat available">B3</div>
+                    <div class="seat available">B4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat available">B5</div>
+                    <div class="seat available">B6</div>
+                    <div class="seat booked">B7</div>
+                    <div class="seat available">B8</div>
+                </div>
+                <!-- Row C -->
+                <div class="seat-row">
+                    <span class="row-label">C</span>
+
+                    <div class="seat available">C1</div>
+                    <div class="seat available">C2</div>
+                    <div class="seat available">C3</div>
+                    <div class="seat booked">C4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat available">C5</div>
+                    <div class="seat selected">C6</div>
+                    <div class="seat available">C7</div>
+                    <div class="seat available">C8</div>
+                </div>
+                <!-- Row D -->
+                <div class="seat-row">
+                    <span class="row-label">D</span>
+
+                    <div class="seat available">D1</div>
+                    <div class="seat available">D2</div>
+                    <div class="seat booked">D3</div>
+                    <div class="seat available">D4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat available">D5</div>
+                    <div class="seat available">D6</div>
+                    <div class="seat available">D7</div>
+                    <div class="seat available">D8</div>
+                </div>
+                <!-- Row E -->
+                <div class="seat-row">
+                    <span class="row-label">E</span>
+
+                    <div class="seat available">E1</div>
+                    <div class="seat selected">E2</div>
+                    <div class="seat available">E3</div>
+                    <div class="seat available">E4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat available">E5</div>
+                    <div class="seat booked">E6</div>
+                    <div class="seat available">E7</div>
+                    <div class="seat available">E8</div>
+                </div>
+                <!-- Row F -->
+                <div class="seat-row">
+                    <span class="row-label">F</span>
+
+                    <div class="seat available">F1</div>
+                    <div class="seat available">F2</div>
+                    <div class="seat available">F3</div>
+                    <div class="seat available">F4</div>
+
+                    <div class="aisle"></div>
+
+                    <div class="seat available">F5</div>
+                    <div class="seat available">F6</div>
+                    <div class="seat available">F7</div>
+                    <div class="seat available">F8</div>
+                </div>
+            </div>
+        </section>
+        <!-- Booking Summary -->
+        <section class="booking-summary">
+            <div>
+                <h3>Booking Summary</h3>
+                <p>
+                    <strong>Movie:</strong> Avengers: Endgame
+                </p>
+                <p>
+                    <strong>Show:</strong> 10:00 AM
+                </p>
+                <p>
+                    <strong>Seats:</strong> B2, C6, E2
+                </p>
+            </div>
+            <div class="price-box">
+                <p>Total Seats: <strong>3</strong></p>
+                <p>Total Price: <strong>₹600</strong></p>
+
+                <button type="button">
+                    Continue Booking
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CineBook | Movie Ticket Booking System</p>
+    </footer>
+</body>
+</html>
