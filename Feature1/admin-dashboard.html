@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaHub - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-left">
+            <h1>🎬 CinemaHub Admin</h1>
+        </div>
+        <div class="header-right">
+            <span id="adminName">Welcome, Admin</span>
+            <button class="btn btn-logout" id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                            📊 Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#movies" class="nav-link" data-section="movies">
+                            🎥 Manage Movies
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#theaters" class="nav-link" data-section="theaters">
+                            🏢 Manage Theaters
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#bookings" class="nav-link" data-section="bookings">
+                            🎫 View Bookings
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Movies</h3>
+                        <p class="stat-number" id="totalMovies">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Theaters</h3>
+                        <p class="stat-number" id="totalTheaters">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Bookings</h3>
+                        <p class="stat-number" id="totalBookings">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Revenue</h3>
+                        <p class="stat-number" id="totalRevenue">₹0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movies Management Section -->
+            <section id="movies" class="content-section">
+                <div class="section-header">
+                    <h2>Manage Movies</h2>
+                    <button class="btn btn-primary" id="addMovieBtn">+ Add Movie</button>
+                </div>
+
+                <!-- Add/Edit Movie Form -->
+                <div class="form-section" id="addMovieForm" style="display: none;">
+                    <h3 id="formTitle">Add New Movie</h3>
+                    <form class="admin-form" id="movieForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="movieName">Movie Name:</label>
+                                <input type="text" id="movieName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="movieGenre">Genre:</label>
+                                <input type="text" id="movieGenre" name="genre" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="movieDuration">Duration (mins):</label>
+                                <input type="number" id="movieDuration" name="duration" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="movieLanguage">Language:</label>
+                                <input type="text" id="movieLanguage" name="language" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="movieDescription">Description:</label>
+                            <textarea id="movieDescription" name="description" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Movie</button>
+                            <button type="button" class="btn btn-secondary" id="cancelMovieBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Movies Table -->
+                <div class="table-container">
+                    <table class="admin-table" id="moviesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Movie Name</th>
+                                <th>Genre</th>
+                                <th>Duration</th>
+                                <th>Language</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="moviesBody">
+                            <!-- Movies will be added here by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p class="empty-message" id="noMovies">No movies added yet.</p>
+                </div>
+            </section>
+
+            <!-- Theaters Management Section -->
+            <section id="theaters" class="content-section">
+                <div class="section-header">
+                    <h2>Manage Theaters</h2>
+                    <button class="btn btn-primary" id="addTheaterBtn">+ Add Theater</button>
+                </div>
+
+                <!-- Add/Edit Theater Form -->
+                <div class="form-section" id="addTheaterForm" style="display: none;">
+                    <h3 id="theaterFormTitle">Add New Theater</h3>
+                    <form class="admin-form" id="theaterForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="theaterName">Theater Name:</label>
+                                <input type="text" id="theaterName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="theaterLocation">Location:</label>
+                                <input type="text" id="theaterLocation" name="location" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="theaterScreens">Number of Screens:</label>
+                                <input type="number" id="theaterScreens" name="screens" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="theaterSeatsPerScreen">Seats per Screen:</label>
+                                <input type="number" id="theaterSeatsPerScreen" name="seatsPerScreen" min="50" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Theater</button>
+                            <button type="button" class="btn btn-secondary" id="cancelTheaterBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Theaters Table -->
+                <div class="table-container">
+                    <table class="admin-table" id="theatersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Theater Name</th>
+                                <th>Location</th>
+                                <th>Screens</th>
+                                <th>Seats/Screen</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="theatersBody">
+                            <!-- Theaters will be added here by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p class="empty-message" id="noTheaters">No theaters added yet.</p>
+                </div>
+            </section>
+
+            <!-- Bookings Section -->
+            <section id="bookings" class="content-section">
+                <h2>View Bookings</h2>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Movie</th>
+                                <th>Theater</th>
+                                <th>Date</th>
+                                <th>Tickets</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsBody">
+                            <!-- Bookings will be added here -->
+                        </tbody>
+                    </table>
+                    <p class="empty-message">No bookings yet.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
