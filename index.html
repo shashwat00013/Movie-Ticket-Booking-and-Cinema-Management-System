@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Movies & Theaters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Cine<span>Book</span></a>
+    <nav>
+        <a href="#movies">Movies</a>
+        <a href="#upcoming">Upcoming</a>
+        <a href="#theaters">Theaters</a>
+        <a href="#shows">Showtimes</a>
+    </nav>
+    <a href="#movies" class="nav-btn">Book Tickets</a>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">MOVIES • THEATERS • SHOWTIMES</p>
+            <h1>Find your next<br><span>movie night.</span></h1>
+            <p>Browse Bollywood and Hollywood movies currently playing in theatres, plus upcoming releases.</p>
+            <a href="#movies" class="primary-btn">Explore Movies</a>
+        </div>
+    </section>
+
+    <section class="section" id="movies">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">NOW SHOWING</p>
+                <h2>Movies in Theatres</h2>
+            </div>
+            <span class="movie-count">Bollywood + Hollywood</span>
+        </div>
+
+        <!-- CSS-only filters -->
+        <input type="radio" name="industry" id="all" checked>
+        <input type="radio" name="industry" id="bollywood">
+        <input type="radio" name="industry" id="hollywood">
+
+        <div class="filter-bar">
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" placeholder="Search movies..." aria-label="Search movies">
+            </div>
+            <div class="filter-buttons">
+                <label for="all">All</label>
+                <label for="bollywood">Bollywood</label>
+                <label for="hollywood">Hollywood</label>
+            </div>
+        </div>
+
+        <div class="movie-grid">
+
+            <article class="movie-card bollywood-card">
+                <div class="poster poster-daayra">
+                    <span class="poster-tag">BOLLYWOOD</span>
+                    <div class="poster-title">DAAYRA</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Daayra</h3>
+                    <p>Drama • Hindi • 2026</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=daayra">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card bollywood-card">
+                <div class="poster poster-vibe">
+                    <span class="poster-tag">BOLLYWOOD</span>
+                    <div class="poster-title">VIBE</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>VIBE</h3>
+                    <p>Action • Comedy • Hindi</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=vibe">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card bollywood-card">
+                <div class="poster poster-game">
+                    <span class="poster-tag">INDIAN CINEMA</span>
+                    <div class="poster-title">I'M<br>GAME</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>I'm Game</h3>
+                    <p>Action • Thriller • 2026</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=im-game">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card hollywood-card">
+                <div class="poster poster-supergirl">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">SUPERGIRL</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Supergirl</h3>
+                    <p>Action • Sci-Fi • English</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=supergirl">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card hollywood-card">
+                <div class="poster poster-mummy">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">THE<br>MUMMY</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>The Mummy</h3>
+                    <p>Horror • Thriller • English</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=the-mummy">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card hollywood-card">
+                <div class="poster poster-end">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">THE END<br>OF OAK STREET</div>
+                    <small>NOW SHOWING</small>
+                </div>
+                <div class="movie-info">
+                    <h3>The End of Oak Street</h3>
+                    <p>Sci-Fi • Mystery • Thriller</p>
+                    <div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=the-end-of-oak-street">Details →</a></div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="section upcoming" id="upcoming">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">COMING SOON</p>
+                <h2>Upcoming Movies</h2>
+            </div>
+            <span class="movie-count">2026 releases</span>
+        </div>
+
+        <div class="movie-grid">
+
+            <article class="movie-card">
+                <div class="poster poster-vvaan">
+                    <span class="poster-tag">BOLLYWOOD</span>
+                    <div class="poster-title">THE<br>VVAAN</div>
+                    <small>25 SEP 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>The Vvaan</h3>
+                    <p>Action • Hindi</p>
+                    <div class="card-bottom"><span>25 SEP 2026</span><a href="movie-details.html?movie=the-vvaan">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-drishyam">
+                    <span class="poster-tag">BOLLYWOOD</span>
+                    <div class="poster-title">DRISHYAM<br>THE CONCLUSION</div>
+                    <small>02 OCT 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Drishyam – The Conclusion</h3>
+                    <p>Crime • Thriller • Hindi</p>
+                    <div class="card-bottom"><span>02 OCT 2026</span><a href="movie-details.html?movie=drishyam-the-conclusion">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-jailer">
+                    <span class="poster-tag">INDIAN CINEMA</span>
+                    <div class="poster-title">JAILER<br>2</div>
+                    <small>15 OCT 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Jailer 2</h3>
+                    <p>Action • Tamil • 2026</p>
+                    <div class="card-bottom"><span>15 OCT 2026</span><a href="movie-details.html?movie=jailer-2">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-hunger">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">THE HUNGER<br>GAMES</div>
+                    <small>20 NOV 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>The Hunger Games: Sunrise on the Reaping</h3>
+                    <p>Drama • Thriller • English</p>
+                    <div class="card-bottom"><span>20 NOV 2026</span><a href="movie-details.html?movie=the-hunger-games">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-avengers">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">AVENGERS:<br>DOOMSDAY</div>
+                    <small>18 DEC 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Avengers: Doomsday</h3>
+                    <p>Action • Sci-Fi • English</p>
+                    <div class="card-bottom"><span>18 DEC 2026</span><a href="movie-details.html?movie=avengers-doomsday">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-dune">
+                    <span class="poster-tag">HOLLYWOOD</span>
+                    <div class="poster-title">DUNE:<br>PART THREE</div>
+                    <small>18 DEC 2026</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Dune: Part Three</h3>
+                    <p>Sci-Fi • Adventure • English</p>
+                    <div class="card-bottom"><span>18 DEC 2026</span><a href="movie-details.html?movie=dune-part-three">Details →</a></div>
+                </div>
+            </article>
+
+            <article class="movie-card">
+                <div class="poster poster-luv">
+                    <span class="poster-tag">BOLLYWOOD • OTT</span>
+                    <div class="poster-title">LUV KI<br>ARRANGE<br>MARRIAGE</div>
+                    <small>2024 • ZEE5</small>
+                </div>
+                <div class="movie-info">
+                    <h3>Luv Ki Arrange Marriage</h3>
+                    <p>Comedy • Romance • Hindi</p>
+                    <div class="card-bottom"><span>OTT</span><a href="movie-details.html?movie=luv-ki-arrange-marriage">Details →</a></div>
+                </div>
+            </article>
+
+        </div>
+        <p class="note">Release dates can change. Dates shown are based on currently published schedules.</p>
+    </section>
+
+    <section class="theater-section" id="theaters">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">THEATERS</p>
+                <h2>Find a Theater</h2>
+            </div>
+        </div>
+
+        <div class="location-box">
+            <div class="location-icon">⌖</div>
+            <div><strong>Mathura, Uttar Pradesh</strong><p>Movie theaters near your selected location</p></div>
+            <span class="change-location">Change location</span>
+        </div>
+
+        <div class="theater-grid">
+            <article class="theater-card">
+                <div class="theater-top"><div class="theater-icon">▣</div><span class="distance">2.1 km</span></div>
+                <h3>Cinepolis Mathura</h3><p>City Mall, Mathura</p>
+                <div class="features"><span>4K</span><span>Dolby Atmos</span><span>Parking</span></div>
+                <a href="#shows" class="outline-btn">View Shows</a>
+            </article>
+            <article class="theater-card">
+                <div class="theater-top"><div class="theater-icon">▣</div><span class="distance">3.8 km</span></div>
+                <h3>PVR Cinemas</h3><p>Shri Krishna Mall, Mathura</p>
+                <div class="features"><span>IMAX</span><span>Dolby</span><span>Food Court</span></div>
+                <a href="#shows" class="outline-btn">View Shows</a>
+            </article>
+            <article class="theater-card">
+                <div class="theater-top"><div class="theater-icon">▣</div><span class="distance">5.2 km</span></div>
+                <h3>INOX</h3><p>High Street Mall, Mathura</p>
+                <div class="features"><span>3D</span><span>Dolby Atmos</span><span>Parking</span></div>
+                <a href="#shows" class="outline-btn">View Shows</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="show-section" id="shows">
+        <div class="show-heading">
+            <div><p class="eyebrow">SHOWTIMES</p><h2>Today's Shows</h2></div>
+            <div class="date-tabs"><span class="active-date">20 Sep</span><span>21 Sep</span><span>22 Sep</span></div>
+        </div>
+
+        <div class="show-list">
+            <div class="show-row">
+                <div><strong>Daayra</strong><small>Cinepolis Mathura • Screen 2</small></div>
+                <div class="times"><span>10:30 AM</span><span>1:45 PM</span><span>6:30 PM</span><span>9:45 PM</span></div>
+            </div>
+            <div class="show-row">
+                <div><strong>Supergirl</strong><small>PVR Cinemas • Screen 4</small></div>
+                <div class="times"><span>11:15 AM</span><span>3:20 PM</span><span>7:10 PM</span><span>10:20 PM</span></div>
+            </div>
+            <div class="show-row">
+                <div><strong>VIBE</strong><small>INOX • Screen 1</small></div>
+                <div class="times"><span>12:00 PM</span><span>4:15 PM</span><span>8:00 PM</span></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-logo">Cine<span>Book</span></div>
+    <p>Movies • Theaters • Showtimes</p>
+    <p class="copyright">© 2026 CineBook. Student project.</p>
+</footer>
+</body>
+</html>

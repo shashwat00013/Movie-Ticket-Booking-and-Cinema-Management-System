@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Details | CineBook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+<a href="index.html" class="logo">Cine<span>Book</span></a>
+<nav><a href="index.html#movies">Movies</a><a href="index.html#upcoming">Upcoming</a><a href="index.html#theaters">Theaters</a></nav>
+<a href="index.html" class="nav-btn">Back to Movies</a>
+</header>
+
+<main class="details-page">
+<section class="details-hero">
+<div id="largePoster" class="large-poster">
+<span id="posterTag" class="poster-tag"></span>
+<div id="posterTitle" class="poster-title"></div>
+<small id="posterDate"></small>
+</div>
+<div class="details-content">
+<p class="eyebrow">MOVIE DETAILS</p>
+<h1 id="movieTitle"></h1>
+<p id="movieMeta" class="details-meta"></p>
+<div class="rating-box"><strong id="movieYear"></strong><span id="movieSource"></span></div>
+<p id="movieDescription" class="description"></p>
+<div id="movieTags" class="details-tags"></div>
+<a href="index.html#movies" class="primary-btn">Back to Movies</a>
+</div>
+</section>
+
+<section class="details-section">
+<div class="section-heading"><div><p class="eyebrow">MORE MOVIES</p><h2>Upcoming & Now Showing</h2></div></div>
+<div class="detail-theater"><div><h3>The Vvaan</h3><p>Bollywood • 25 Sep 2026</p></div><div class="times"><span>Coming Soon</span></div></div>
+<div class="detail-theater"><div><h3>Jailer 2</h3><p>Indian Cinema • 15 Oct 2026</p></div><div class="times"><span>Coming Soon</span></div></div>
+<div class="detail-theater"><div><h3>Avengers: Doomsday</h3><p>Hollywood • 18 Dec 2026</p></div><div class="times"><span>Coming Soon</span></div></div>
+</section>
+</main>
+<footer><div class="footer-logo">Cine<span>Book</span></div><p>Movies • Theaters • Showtimes</p></footer>
+
+<script>
+const movies = {
+  'daayra': {title:'Daayra', meta:'Drama • Hindi • 2026', year:'2026', source:'Now Showing', tag:'BOLLYWOOD', poster:'poster-daayra', date:'NOW SHOWING', description:'A Hindi drama set against an intense personal journey, where difficult choices bring unexpected consequences.', tags:['Drama','Hindi','2026']},
+  'vibe': {title:'VIBE', meta:'Action • Comedy • Hindi', year:'2026', source:'Now Showing', tag:'BOLLYWOOD', poster:'poster-vibe', date:'NOW SHOWING', description:'An action-comedy full of energy, friendship and unexpected situations.', tags:['Action','Comedy','Hindi']},
+  'im-game': {title:"I'm Game", meta:'Action • Thriller • 2026', year:'2026', source:'Now Showing', tag:'INDIAN CINEMA', poster:'poster-game', date:'NOW SHOWING', description:'An action thriller built around danger, strategy and high-stakes decisions.', tags:['Action','Thriller','2026']},
+  'supergirl': {title:'Supergirl', meta:'Action • Sci-Fi • English', year:'2026', source:'Now Showing', tag:'HOLLYWOOD', poster:'poster-supergirl', date:'NOW SHOWING', description:'A superhero adventure following Supergirl as she faces a new threat and discovers what it means to stand on her own.', tags:['Action','Sci-Fi','English']},
+  'the-mummy': {title:'The Mummy', meta:'Horror • Thriller • English', year:'2026', source:'Now Showing', tag:'HOLLYWOOD', poster:'poster-mummy', date:'NOW SHOWING', description:'A dark horror thriller where an ancient force returns and threatens everyone who gets too close.', tags:['Horror','Thriller','English']},
+  'the-end-of-oak-street': {title:'The End of Oak Street', meta:'Sci-Fi • Mystery • Thriller', year:'2026', source:'Now Showing', tag:'HOLLYWOOD', poster:'poster-end', date:'NOW SHOWING', description:'A mysterious sci-fi thriller centered on strange events surrounding Oak Street.', tags:['Sci-Fi','Mystery','Thriller']},
+  'the-vvaan': {title:'The Vvaan', meta:'Action • Hindi', year:'2026', source:'Coming Soon', tag:'BOLLYWOOD', poster:'poster-vvaan', date:'25 SEP 2026', description:'An upcoming Bollywood action film scheduled for release on 25 September 2026.', tags:['Action','Hindi','Coming Soon']},
+  'drishyam-the-conclusion': {title:'Drishyam – The Conclusion', meta:'Crime • Thriller • Hindi', year:'2026', source:'Coming Soon', tag:'BOLLYWOOD', poster:'poster-drishyam', date:'02 OCT 2026', description:'The next chapter in the Drishyam story, continuing its crime and thriller narrative.', tags:['Crime','Thriller','Hindi']},
+  'jailer-2': {title:'Jailer 2', meta:'Action • Tamil • 2026', year:'2026', source:'Coming Soon', tag:'INDIAN CINEMA', poster:'poster-jailer', date:'15 OCT 2026', description:'An upcoming Tamil action film and sequel to Jailer.', tags:['Action','Tamil','2026']},
+  'the-hunger-games': {title:'The Hunger Games: Sunrise on the Reaping', meta:'Drama • Thriller • English', year:'2026', source:'Coming Soon', tag:'HOLLYWOOD', poster:'poster-hunger', date:'20 NOV 2026', description:'An upcoming Hunger Games story set before the original trilogy.', tags:['Drama','Thriller','English']},
+  'avengers-doomsday': {title:'Avengers: Doomsday', meta:'Action • Sci-Fi • English', year:'2026', source:'Coming Soon', tag:'HOLLYWOOD', poster:'poster-avengers', date:'18 DEC 2026', description:'An upcoming Marvel Studios superhero film featuring the Avengers in a new battle.', tags:['Action','Sci-Fi','English']},
+  'dune-part-three': {title:'Dune: Part Three', meta:'Sci-Fi • Adventure • English', year:'2026', source:'Coming Soon', tag:'HOLLYWOOD', poster:'poster-dune', date:'18 DEC 2026', description:'The next chapter of the Dune saga, continuing its epic science-fiction adventure.', tags:['Sci-Fi','Adventure','English']},
+  'luv-ki-arrange-marriage': {title:'Luv Ki Arrange Marriage', meta:'Comedy • Romance • Drama • Hindi • 2024', year:'2024', source:'ZEE5 Original', tag:'BOLLYWOOD • OTT', poster:'poster-luv', date:'2024 • ZEE5', description:"Luv falls in love with Ishika and plans to ask for her hand in marriage, but the situation becomes chaotic when his widowed father falls for Ishika's mother.", tags:['Comedy','Romance','Drama','Hindi']}
+};
+
+const id = new URLSearchParams(window.location.search).get('movie');
+const movie = movies[id] || movies['daayra'];
+document.title = movie.title + ' | CineBook';
+document.getElementById('largePoster').classList.add(movie.poster);
+document.getElementById('posterTag').textContent = movie.tag;
+document.getElementById('posterTitle').innerHTML = movie.title.replaceAll(' ', '<br>');
+document.getElementById('posterDate').textContent = movie.date;
+document.getElementById('movieTitle').textContent = movie.title;
+document.getElementById('movieMeta').textContent = movie.meta;
+document.getElementById('movieYear').textContent = movie.year;
+document.getElementById('movieSource').textContent = movie.source;
+document.getElementById('movieDescription').textContent = movie.description;
+document.getElementById('movieTags').innerHTML = movie.tags.map(t => '<span>' + t + '</span>').join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#0d0d10;color:#f4f4f5;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.navbar{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#111114;border-bottom:1px solid #25252b;position:sticky;top:0;z-index:20}
+.logo,.footer-logo{font-size:27px;font-weight:800;letter-spacing:-1px}.logo span,.footer-logo span{color:#ff4d67}
+.navbar nav{display:flex;gap:28px}.navbar nav a{color:#b9b9c2;font-size:14px}.navbar nav a:hover{color:#fff}
+.nav-btn,.primary-btn{display:inline-block;background:#ff4d67;color:#fff;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:700}
+.hero{min-height:500px;padding:95px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#0d0d10 0%,rgba(13,13,16,.93) 38%,rgba(13,13,16,.4) 100%),radial-gradient(circle at 75% 45%,#6b1d32 0,#29131d 28%,#0d0d10 65%);border-bottom:1px solid #25252b}
+.hero-content{max-width:650px}.eyebrow{color:#ff6178;font-size:12px;font-weight:800;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-size:clamp(45px,7vw,76px);line-height:.98;letter-spacing:-3px;margin-bottom:24px}.hero h1 span{color:#ff4d67}
+.hero p:not(.eyebrow){color:#b6b6c0;max-width:540px;margin-bottom:30px;font-size:17px}
+.section,.theater-section,.show-section,.details-section{padding:75px 7%}.section-heading,.show-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.section-heading h2,.show-heading h2,.details-section h2{font-size:34px;letter-spacing:-1px}.movie-count{color:#92929c;font-size:14px}
+body>main>section>input,#all,#bollywood,#hollywood{display:none}
+.filter-bar{display:flex;gap:18px;justify-content:space-between;align-items:center;margin-bottom:35px;flex-wrap:wrap}
+.search-box{min-width:260px;flex:1;max-width:390px;height:46px;border:1px solid #303038;border-radius:8px;display:flex;align-items:center;padding:0 14px;background:#141419}
+.search-box span{color:#8c8c97;font-size:24px;margin-right:9px}.search-box input{width:100%;border:0;outline:0;background:transparent;color:white;font-size:14px}.search-box input::placeholder{color:#777782}
+.filter-buttons{display:flex;gap:8px;flex-wrap:wrap}.filter-buttons label{border:1px solid #303038;background:#141419;color:#b5b5be;padding:10px 16px;border-radius:7px;cursor:pointer;font-size:13px}
+#all:checked~.filter-bar label[for=all],#bollywood:checked~.filter-bar label[for=bollywood],#hollywood:checked~.filter-bar label[for=hollywood]{background:#ff4d67;border-color:#ff4d67;color:#fff}
+#bollywood:checked~.movie-grid .hollywood-card,#hollywood:checked~.movie-grid .bollywood-card{display:none}
+.movie-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.movie-card{background:#151519;border:1px solid #27272e;border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s}.movie-card:hover{transform:translateY(-5px);border-color:#484852}
+.poster{height:320px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.poster:after,.large-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.76))}
+.poster-tag{position:relative;z-index:2;align-self:flex-start;font-size:10px;font-weight:800;padding:6px 9px;border:1px solid rgba(255,255,255,.4);border-radius:4px;background:rgba(0,0,0,.28)}
+.poster-title{position:relative;z-index:2;font-size:30px;line-height:.95;font-weight:900;letter-spacing:-1px}.poster small{position:relative;z-index:2;font-size:11px;font-weight:700;letter-spacing:1px}
+.poster-daayra{background:radial-gradient(circle at 70% 25%,#b37a53,#47262a 48%,#101014 100%)}
+.poster-vibe{background:radial-gradient(circle at 25% 25%,#e34d42,#571f29 50%,#111116 100%)}
+.poster-game{background:radial-gradient(circle at 65% 20%,#4e91b7,#182e42 45%,#090d12 100%)}
+.poster-supergirl{background:radial-gradient(circle at 50% 25%,#3b8bd1,#302052 45%,#100e18 100%)}
+.poster-mummy{background:radial-gradient(circle at 50% 25%,#b58a48,#4b351d 45%,#110f0b 100%)}
+.poster-end{background:radial-gradient(circle at 70% 20%,#7b8c9f,#263444 45%,#0c1118 100%)}
+.poster-vvaan{background:radial-gradient(circle at 70% 25%,#e7b16d,#552735 45%,#130e15 100%)}
+.poster-drishyam{background:radial-gradient(circle at 50% 25%,#8c9a89,#374238 45%,#111411 100%)}
+.poster-jailer{background:radial-gradient(circle at 50% 25%,#e5bd28,#27200c 48%,#090909 100%)}
+.poster-hunger{background:radial-gradient(circle at 65% 20%,#bd554c,#43202b 45%,#110d13 100%)}
+.poster-avengers{background:radial-gradient(circle at 50% 20%,#7d4052,#241c3c 45%,#090b13 100%)}
+.poster-dune{background:radial-gradient(circle at 55% 25%,#d49b55,#6c452b 45%,#17120d 100%)}
+.poster-luv{background:radial-gradient(circle at 50% 20%,#ffb6c8,#b83f70 42%,#4d172d 100%)}
+.movie-info{padding:18px}.movie-info h3{font-size:19px;margin-bottom:5px}.movie-info p{color:#8f8f9a;font-size:13px}
+.card-bottom{display:flex;justify-content:space-between;margin-top:16px;align-items:center}.card-bottom span{color:#f5c451;font-size:11px;font-weight:700}.card-bottom a{color:#ff647a;font-size:13px;font-weight:700}
+.upcoming{background:#111114}.note{color:#777783;font-size:12px;margin-top:25px}
+.theater-section{background:#0f0f12}.location-box{border:1px solid #2d2d35;background:#16161b;border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:15px;margin-bottom:25px}
+.location-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:8px;background:#29171d;color:#ff5d73;font-size:22px}.location-box p{color:#8f8f9a;font-size:12px}.change-location{margin-left:auto;color:#ff6178;font-size:13px}
+.theater-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.theater-card{background:#17171c;border:1px solid #292930;border-radius:11px;padding:24px}
+.theater-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.theater-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:9px;background:#252027;color:#ff6178}.distance{color:#9b9ba4;font-size:12px}
+.theater-card h3{margin-bottom:4px}.theater-card p{color:#8f8f9a;font-size:13px}.features{display:flex;gap:6px;flex-wrap:wrap;margin:20px 0}.features span,.details-tags span{padding:6px 9px;border-radius:5px;background:#222229;color:#a9a9b2;font-size:11px}
+.outline-btn{display:block;text-align:center;border:1px solid #3a3a43;padding:10px;border-radius:7px;color:#ddd;font-size:13px;font-weight:700}.outline-btn:hover{border-color:#ff4d67;color:#ff6178}
+.show-section{background:#0d0d10}.date-tabs{display:flex;gap:7px}.date-tabs span{padding:9px 13px;border:1px solid #303039;border-radius:6px;color:#9999a3;font-size:12px}.date-tabs .active-date{color:white;border-color:#ff4d67;background:#ff4d67}
+.show-list{border-top:1px solid #292930}.show-row,.detail-theater{padding:22px 0;border-bottom:1px solid #292930;display:flex;align-items:center;justify-content:space-between;gap:20px}.show-row strong{display:block;margin-bottom:4px}.show-row small,.detail-theater p{color:#8f8f9a;font-size:13px}
+.times{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}.times span{padding:9px 12px;border:1px solid #383840;border-radius:6px;color:#ddd;font-size:12px}.times span:hover{border-color:#ff4d67;color:#ff647a}
+footer{padding:45px 7%;border-top:1px solid #25252b;color:#85858f}footer p{margin-top:7px;font-size:12px}.copyright{margin-top:25px}
+.details-hero{padding:75px 7%;display:grid;grid-template-columns:330px 1fr;gap:55px;background:linear-gradient(120deg,#171117,#0d0d10 60%)}
+.large-poster{height:475px;padding:25px;position:relative;display:flex;flex-direction:column;justify-content:space-between;border-radius:12px;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,.4)}
+.large-poster .poster-title{font-size:43px}.details-content{align-self:center;max-width:700px}.details-content h1{font-size:56px;letter-spacing:-2px;margin-bottom:8px}.details-meta{color:#9999a4;margin-bottom:20px}
+.rating-box{display:inline-flex;flex-direction:column;padding:13px 17px;border:1px solid #35353e;border-radius:8px;margin-bottom:24px}.rating-box strong{color:#f5c451;font-size:20px}.rating-box span{color:#888893;font-size:10px}
+.description{color:#b0b0ba;max-width:650px;margin-bottom:22px}.details-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px}
+@media(max-width:900px){.movie-grid,.theater-grid{grid-template-columns:repeat(2,1fr)}.navbar nav{display:none}.details-hero{grid-template-columns:260px 1fr;gap:30px}}
+@media(max-width:650px){.navbar{padding:0 5%}.navbar .nav-btn{display:none}.hero,.section,.theater-section,.show-section,.details-section{padding-left:5%;padding-right:5%}.hero{min-height:450px;padding-top:70px;padding-bottom:70px}.movie-grid,.theater-grid{grid-template-columns:1fr}.section-heading,.show-heading{align-items:flex-start;flex-direction:column}.filter-bar{align-items:stretch;flex-direction:column}.search-box{max-width:none}.location-box{align-items:flex-start;flex-wrap:wrap}.change-location{margin-left:57px}.show-row,.detail-theater{align-items:flex-start;flex-direction:column}.times{justify-content:flex-start}.details-hero{padding-top:45px;grid-template-columns:1fr}.large-poster{width:100%;max-width:330px;height:430px}.details-content h1{font-size:43px}}
+
+/* Movie poster thumbnails: real poster images with a dark overlay for readable text */
+.poster-daayra{background-image:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.78)),url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-vibe{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.78)),url("https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-game{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.80)),url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-supergirl{background-image:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.78)),url("https://image.tmdb.org/t/p/w780/wZJTidyAi53smx6x4LBFgfQolRU.jpg");background-size:cover;background-position:center}
+.poster-mummy{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.80)),url("https://image.tmdb.org/t/p/w780/wMrV8SLne1jHLeYS0lLrA1Tf86P.jpg");background-size:cover;background-position:center}
+.poster-end{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.80)),url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-vvaan{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.80)),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-drishyam{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.82)),url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-jailer{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.82)),url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-hunger{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.82)),url("https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-avengers{background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.80)),url("https://image.tmdb.org/t/p/w780/jzPwsojjFStf5lR5Nm07w2hH56G.jpg");background-size:cover;background-position:center}
+.poster-dune{background-image:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.80)),url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+.poster-luv{background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78)),url("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=900&q=85");background-size:cover;background-position:center}
+
+/* Keep the details page poster photographic too */
+.large-poster.poster-luv{background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78)),url("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=1200&q=85");background-size:cover;background-position:center}
