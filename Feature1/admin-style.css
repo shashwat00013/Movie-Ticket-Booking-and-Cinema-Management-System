@@ -184,6 +184,7 @@ header.admin-header h1 {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none; /* CHANGE: logout ab <a> hai */
 }
 
 .btn-logout:hover {
@@ -229,6 +230,16 @@ header.admin-header h1 {
     background-color: #2c3e50;
     border-left-color: var(--primary-color);
     padding-left: calc(2rem - 4px + 4px);
+}
+
+/* CHANGE: bina JS ke active link highlight (URL ke #id ke hisaab se) */
+body:not(:has(.content-section:target)) .sidebar-nav a[href="#dashboard"],
+body:has(#dashboard:target) .sidebar-nav a[href="#dashboard"],
+body:has(#movies:target) .sidebar-nav a[href="#movies"],
+body:has(#theaters:target) .sidebar-nav a[href="#theaters"],
+body:has(#bookings:target) .sidebar-nav a[href="#bookings"] {
+    background-color: #2c3e50;
+    border-left-color: var(--primary-color);
 }
 
 .admin-main {
@@ -278,11 +289,19 @@ header.admin-header h1 {
 /* ===== CONTENT SECTIONS ===== */
 .content-section {
     display: none;
+    scroll-margin-top: 80px; /* CHANGE: sticky header ke neeche na chhupe */
 }
 
-.content-section.active {
+/* CHANGE: :target = URL me jo #id hai wahi section dikhao (bina JS) */
+.content-section.active,
+.content-section:target {
     display: block;
     animation: fadeIn 0.3s ease-in;
+}
+
+/* CHANGE: URL me # na ho to Dashboard default dikhao */
+.admin-main:not(:has(:target)) #dashboard {
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -321,6 +340,7 @@ header.admin-header h1 {
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-block;
+    text-decoration: none; /* CHANGE: <a class="btn"> par underline nahi */
 }
 
 .btn-primary {
@@ -486,7 +506,7 @@ header.admin-header h1 {
     text-align: center;
     color: #999;
     font-size: 1.1rem;
-    display: none;
+    display: block; /* CHANGE: bina JS ke "No data" message hamesha dikhe */
 }
 
 .empty-message.show {
