@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CineBook | Movies &amp; Theaters</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<a class="logo" href="index.html">Cine<span>Book</span></a>
+<nav>
+<a href="#movies">Movies</a>
+<a href="#upcoming">Upcoming</a>
+<a href="#theaters">Theaters</a>
+<a href="#shows">Showtimes</a>
+</nav>
+<div class="nav-actions">
+<a class="nav-btn" href="#movies">Book Tickets</a>
+<a class="logout-btn" href="index.html" onclick="localStorage.clear(); sessionStorage.clear();">Log Out</a>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-content">
+<p class="eyebrow">MOVIES • THEATERS • SHOWTIMES</p>
+<h1>Find your next<br/><span>movie night.</span></h1>
+<p>Browse Bollywood and Hollywood movies currently playing in theatres, plus upcoming releases.</p>
+<a class="primary-btn" href="#movies">Explore Movies</a>
+</div>
+</section>
+<section class="section" id="movies">
+<div class="section-heading">
+<div>
+<p class="eyebrow">NOW SHOWING</p>
+<h2>Movies in Theatres</h2>
+</div>
+<span class="movie-count">Bollywood + Hollywood</span>
+</div>
+<!-- CSS-only filters -->
+<input checked="" id="all" name="industry" type="radio"/>
+<input id="bollywood" name="industry" type="radio"/>
+<input id="hollywood" name="industry" type="radio"/>
+<div class="filter-bar">
+<div class="search-box">
+<span>⌕</span>
+<input id="movie-search" aria-label="Search movies" placeholder="Search movies..." type="search" autocomplete="off"/>
+<div id="search-results" class="search-results" role="listbox" aria-label="Movie search results" hidden></div>
+</div>
+<div class="filter-buttons">
+<label for="all">All</label>
+<label for="bollywood">Bollywood</label>
+<label for="hollywood">Hollywood</label>
+</div>
+<div class="extra-movie-controls">
+<select id="genre-filter" aria-label="Filter by genre">
+<option value="all">All Genres</option><option>Action</option><option>Drama</option><option>Comedy</option><option>Thriller</option><option>Horror</option><option>Sci-Fi</option><option>Mystery</option><option>Adventure</option><option>Crime</option>
+</select>
+<button type="button" id="watchlist-toggle" aria-pressed="false">♡ Watchlist</button>
+</div>
+</div>
+<div class="movie-grid">
+<article class="movie-card bollywood-card">
+<div class="poster poster-daayra">
+<img alt="Daayra movie poster" class="real-poster" loading="lazy" src="https://images.filmibeat.com/ph-big/2026/09/daayra1789475662_0.jpg"/>
+<span class="poster-tag">BOLLYWOOD</span>
+<div class="poster-title">DAAYRA</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>Daayra</h3>
+<p>Drama • Hindi • 2026</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=daayra">Details →</a></div>
+</div>
+</article>
+<article class="movie-card bollywood-card">
+<div class="poster poster-vibe">
+<img alt="Vibe movie poster" class="real-poster" loading="lazy" src="https://images.filmibeat.com/ph-big/2026/09/vibe1789377731_0.jpg"/>
+<span class="poster-tag">BOLLYWOOD</span>
+<div class="poster-title">VIBE</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>VIBE</h3>
+<p>Action • Comedy • Hindi</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=vibe">Details →</a></div>
+</div>
+</article>
+<article class="movie-card bollywood-card">
+<div class="poster poster-game">
+<img alt="Game movie poster" class="real-poster" loading="lazy" src="https://i0.wp.com/indiaglitz.com/wp-content/uploads/2025/11/dulqersalman29112025m1.jpg?resize=1200%2C1799&amp;ssl=1"/>
+<span class="poster-tag">INDIAN CINEMA</span>
+<div class="poster-title">I'M<br/>GAME</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>I'm Game</h3>
+<p>Action • Thriller • 2026</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=i-m-game">Details →</a></div>
+</div>
+</article>
+<article class="movie-card hollywood-card">
+<div class="poster poster-supergirl">
+<img alt="Supergirl movie poster" class="real-poster" loading="lazy" src="https://www.televisionacademy.com/files/assets/posters/screening-supergirl-312x462.jpg"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">SUPERGIRL</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>Supergirl</h3>
+<p>Action • Sci-Fi • English</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=supergirl">Details →</a></div>
+</div>
+</article>
+<article class="movie-card hollywood-card">
+<div class="poster poster-mummy">
+<img alt="Mummy movie poster" class="real-poster" loading="lazy" src="https://www.impawards.com/2026/posters/lee_cronins_the_mummy.jpg"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">THE<br/>MUMMY</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>The Mummy</h3>
+<p>Horror • Thriller • English</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=the-mummy">Details →</a></div>
+</div>
+</article>
+<article class="movie-card hollywood-card">
+<div class="poster poster-end">
+<img alt="End movie poster" class="real-poster" loading="lazy" src="https://cdn.moviefone.com/admin-uploads/posters/the-end-of-oak-street-movie-poster_1774545983.jpg?d=480x720&amp;q=50"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">THE END<br/>OF OAK STREET</div>
+<small>NOW SHOWING</small>
+</div>
+<div class="movie-info">
+<h3>The End of Oak Street</h3>
+<p>Sci-Fi • Mystery • Thriller</p>
+<div class="card-bottom"><span>NOW SHOWING</span><a href="movie-details.html?movie=the-end-of-oak-street">Details →</a></div>
+</div>
+</article>
+</div>
+</section>
+<section class="section upcoming" id="upcoming">
+<div class="section-heading">
+<div>
+<p class="eyebrow">COMING SOON</p>
+<h2>Upcoming Movies</h2>
+</div>
+<span class="movie-count">2026 releases</span>
+</div>
+<div class="movie-grid">
+<article class="movie-card">
+<div class="poster poster-vvaan">
+<img alt="Vvaan movie poster" class="real-poster" loading="lazy" src="https://www.jagranimages.com/images/2026/07/09/article/image/vannn-1783596031832_m.webp"/>
+<span class="poster-tag">BOLLYWOOD</span>
+<div class="poster-title">THE<br/>VVAAN</div>
+<small>25 SEP 2026</small>
+</div>
+<div class="movie-info">
+<h3>The Vvaan</h3>
+<p>Action • Hindi</p>
+<div class="card-bottom"><span>25 SEP 2026</span><a href="movie-details.html?movie=the-vvaan">Details →</a></div>
+</div>
+</article>
+<article class="movie-card">
+<div class="poster poster-drishyam">
+<img alt="Drishyam The Conclusion movie poster" class="real-poster" loading="lazy" onerror="this.remove()" src="https://www.impawards.com/intl/india/2026/posters/drishyam_the_conclusion.jpg"/>
+<span class="poster-tag">BOLLYWOOD</span>
+<div class="poster-title">DRISHYAM<br/>THE CONCLUSION</div>
+<small>02 OCT 2026</small>
+</div>
+<div class="movie-info">
+<h3>Drishyam – The Conclusion</h3>
+<p>Crime • Thriller • Hindi</p>
+<div class="card-bottom"><span>02 OCT 2026</span><a href="movie-details.html?movie=drishyam-the-conclusion">Details →</a></div>
+</div>
+</article>
+<article class="movie-card">
+<div class="poster poster-jailer">
+<img alt="Jailer 2 movie poster" class="real-poster" loading="lazy" src="https://variety.blr1.cdn.digitaloceanspaces.com/2026/10/Jailer-2-1.jpg"/>
+<span class="poster-tag">INDIAN CINEMA</span>
+<div class="poster-title">JAILER<br/>2</div>
+<small>15 OCT 2026</small>
+</div>
+<div class="movie-info">
+<h3>Jailer 2</h3>
+<p>Action • Tamil • 2026</p>
+<div class="card-bottom"><span>15 OCT 2026</span><a href="movie-details.html?movie=jailer-2">Details →</a></div>
+</div>
+</article>
+<article class="movie-card">
+<div class="poster poster-hunger">
+<img alt="The Hunger Games Sunrise on the Reaping movie poster" class="real-poster" loading="lazy" onerror="this.remove()" src="https://www.impawards.com/2026/posters/hunger_games_sunrise_on_the_reaping.jpg"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">THE HUNGER<br/>GAMES</div>
+<small>20 NOV 2026</small>
+</div>
+<div class="movie-info">
+<h3>The Hunger Games: Sunrise on the Reaping</h3>
+<p>Drama • Thriller • English</p>
+<div class="card-bottom"><span>20 NOV 2026</span><a href="movie-details.html?movie=the-hunger-games-sunrise-on-the-reaping">Details →</a></div>
+</div>
+</article>
+<article class="movie-card">
+<div class="poster poster-avengers">
+<img alt="Avengers Doomsday movie poster" class="real-poster" loading="lazy" onerror="this.remove()" src="https://www.impawards.com/2026/posters/avengers_doomsday.jpg"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">AVENGERS:<br/>DOOMSDAY</div>
+<small>18 DEC 2026</small>
+</div>
+<div class="movie-info">
+<h3>Avengers: Doomsday</h3>
+<p>Action • Sci-Fi • English</p>
+<div class="card-bottom"><span>18 DEC 2026</span><a href="movie-details.html?movie=avengers-doomsday">Details →</a></div>
+</div>
+</article>
+<article class="movie-card">
+<div class="poster poster-dune">
+<img alt="Dune Part Three movie poster" class="real-poster" loading="lazy" onerror="this.remove()" src="https://www.impawards.com/2026/posters/dune_part_three_ver10.jpg"/>
+<span class="poster-tag">HOLLYWOOD</span>
+<div class="poster-title">DUNE:<br/>PART THREE</div>
+<small>18 DEC 2026</small>
+</div>
+<div class="movie-info">
+<h3>Dune: Part Three</h3>
+<p>Sci-Fi • Adventure • English</p>
+<div class="card-bottom"><span>18 DEC 2026</span><a href="movie-details.html?movie=dune-part-three">Details →</a></div>
+</div>
+</article>
+
+</div>
+<p class="note">Release dates can change. Dates shown are based on currently published schedules.</p>
+</section>
+<section class="theater-section" id="theaters">
+<div class="section-heading">
+<div>
+<p class="eyebrow">THEATERS</p>
+<h2>Find a Theater</h2>
+</div>
+</div>
+<div class="location-box">
+<div class="location-icon">⌖</div>
+<div><strong>Mathura, Uttar Pradesh</strong><p>Movie theaters near your selected location</p></div>
+<button class="change-location" id="change-location-btn" type="button">Change location</button>
+</div>
+<div class="theater-grid">
+<article class="theater-card">
+<div class="theater-top"><div class="theater-icon">▣</div><span class="distance">2.1 km</span></div>
+<h3>Cinepolis Mathura</h3><p>City Mall, Mathura</p>
+<div class="features"><span>4K</span><span>Dolby Atmos</span><span>Parking</span></div>
+<a class="outline-btn" href="#shows">View Shows</a>
+</article>
+<article class="theater-card">
+<div class="theater-top"><div class="theater-icon">▣</div><span class="distance">3.8 km</span></div>
+<h3>PVR Cinemas</h3><p>Shri Krishna Mall, Mathura</p>
+<div class="features"><span>IMAX</span><span>Dolby</span><span>Food Court</span></div>
+<a class="outline-btn" href="#shows">View Shows</a>
+</article>
+<article class="theater-card">
+<div class="theater-top"><div class="theater-icon">▣</div><span class="distance">5.2 km</span></div>
+<h3>INOX</h3><p>High Street Mall, Mathura</p>
+<div class="features"><span>3D</span><span>Dolby Atmos</span><span>Parking</span></div>
+<a class="outline-btn" href="#shows">View Shows</a>
+</article>
+</div>
+</section>
+<section class="show-section" id="shows">
+<div class="show-heading">
+<div><p class="eyebrow">SHOWTIMES</p><h2>Today's Shows</h2></div>
+<div class="date-tabs"><span class="active-date">20 Sep</span><span>21 Sep</span><span>22 Sep</span></div>
+</div>
+<div class="show-list">
+<div class="show-row">
+<div><strong>Daayra</strong><small>Cinepolis Mathura • Screen 2</small></div>
+<div class="times"><span>10:30 AM</span><span>1:45 PM</span><span>6:30 PM</span><span>9:45 PM</span></div>
+</div>
+<div class="show-row">
+<div><strong>Supergirl</strong><small>PVR Cinemas • Screen 4</small></div>
+<div class="times"><span>11:15 AM</span><span>3:20 PM</span><span>7:10 PM</span><span>10:20 PM</span></div>
+</div>
+<div class="show-row">
+<div><strong>VIBE</strong><small>INOX • Screen 1</small></div>
+<div class="times"><span>12:00 PM</span><span>4:15 PM</span><span>8:00 PM</span></div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-logo">Cine<span>Book</span></div>
+<p>Movies • Theaters • Showtimes</p>
+<p class="copyright">© 2026 CineBook. Student project.</p>
+</footer>
+<style>
+.search-box{position:relative}
+.search-results{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:1000;background:#17171d;border:1px solid #ff4d67;border-radius:10px;max-height:280px;overflow-y:auto;box-shadow:0 12px 28px rgba(0,0,0,.4)}
+.search-results[hidden]{display:none}
+.search-result{display:block;width:100%;padding:12px 15px;text-align:left;background:transparent;border:0;border-bottom:1px solid #2b2b34;color:#fff;cursor:pointer;font:inherit}
+.search-result:last-child{border-bottom:0}.search-result:hover,.search-result:focus{background:#29202a;outline:none}.search-result small{display:block;color:#aaa;margin-top:3px}
+.movie-card.search-hidden{display:none!important}
+.search-empty{padding:13px 15px;color:#bbb}
+</style>
+<style>.movie-card.search-highlight{outline:2px solid #ff4d67;outline-offset:4px}</style>
+<style>
+.extra-movie-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.extra-movie-controls select,.extra-movie-controls button{height:44px;padding:0 14px;border:1px solid #303038;border-radius:8px;background:#141419;color:#f4f4f5;font-size:13px;cursor:pointer}
+.extra-movie-controls button.active{background:#ff4d67;border-color:#ff4d67;color:#fff}
+.watchlist-heart{border:1px solid #ff4d67;background:transparent;color:#ff647a;border-radius:7px;padding:5px 10px;cursor:pointer;font-size:17px;line-height:1}
+.watchlist-heart.saved{background:#ff4d67;color:#fff}
+.movie-card.genre-hidden,.movie-card.watchlist-hidden{display:none!important}
+@media(max-width:700px){.extra-movie-controls{width:100%}.extra-movie-controls select,.extra-movie-controls button{flex:1}}
+</style>
+<script src="script.js" defer></script>
+</body>
+</html>
