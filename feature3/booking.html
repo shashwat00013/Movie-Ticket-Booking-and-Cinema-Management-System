@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101014">
+  <meta name="description" content="Choose a movie, pick your seats, and preview your CineBook ticket.">
+  <title>CineBook | Book Movie Tickets</title>
+  <link rel="stylesheet" href="css/booking.css">
+  <script src="js/booking.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="booking.html" aria-label="CineBook home"><span class="brand-mark" aria-hidden="true">▶</span><span>Cine<span class="brand-accent">Book</span></span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a class="active" href="#booking">Book tickets</a>
+    </nav>
+    <div class="header-right"><span class="live-dot" aria-hidden="true"></span><span>Movie night starts here</span></div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR CINEMA, YOUR WAY</p>
+        <h1>Big stories.<br><span>Better seats.</span></h1>
+        <p class="hero-copy">Find your moment at the movies. Choose a movie from the booking form, pick your favourite seats, and keep your ticket close.</p>
+      </div>
+    </section>
+
+    <div class="booking-layout" id="booking">
+      <section class="movie-panel panel" id="movieSelection" aria-labelledby="moviePanelHeading">
+        <div class="panel-topline"><span class="eyebrow">NOW SHOWING</span><span class="mini-badge"><span class="live-dot"></span> IN CINEMAS</span></div>
+        <div class="poster" id="moviePoster">
+          <img
+            class="poster-image"
+            id="moviePosterImage"
+            src="https://i.ebayimg.com/images/g/LHEAAOSwjhlgm8oc/s-l1200.jpg"
+            alt="Avengers: Endgame official movie poster"
+            fetchpriority="high"
+          >
+          <div class="poster-overlay" aria-hidden="true"></div>
+          <div class="poster-top"><span id="posterStudio">CINEBOOK PICKS</span><span class="poster-rating" id="posterRating">★ 8.4</span></div>
+          <div class="poster-footer"><span>NOW SHOWING<br>CHOOSE A SHOW TO BOOK</span><span class="poster-footer-mark">CB</span></div>
+        </div>
+
+        <div class="movie-details">
+          <div class="movie-title-row"><div><p class="eyebrow">FEATURED MOVIE</p><h2 id="moviePanelHeading">Avengers: Endgame</h2></div><span class="rating-pill" id="movieRating">★ 8.4</span></div>
+          <div class="metadata" id="movieMetadata"><span>2019</span><i></i><span>Action</span><i></i><span>3h 1m</span><i></i><span>English</span></div>
+          <p class="movie-description" id="movieDescription">After the devastating events of Infinity War, the Avengers assemble for one final stand to restore balance to the universe.</p>
+
+          <div class="control-group" data-field="movieSelect">
+            <label for="movieSelect">Select movie <span class="required">*</span></label>
+            <div class="select-wrap"><select id="movieSelect" name="movieSelect" aria-describedby="movieSelectError" required><option value="avengers">Avengers: Endgame</option>
+                <option value="spiderverse">Spider-Man: Across the Spider-Verse</option>
+                <option value="dune">Dune: Part Two</option>
+                <option value="batman">The Batman</option>
+                <option value="inception">Inception</option>
+                <option value="interstellar">Interstellar</option>
+                <option value="oppenheimer">Oppenheimer</option>
+                <option value="insideout2">Inside Out 2</option>
+                <option value="deadpoolwolverine">Deadpool &amp; Wolverine</option>
+                <option value="joker">Joker</option></select><span class="select-chevron" aria-hidden="true">⌄</span></div>
+            <small class="field-error" id="movieSelectError" aria-live="polite"></small>
+          </div>
+
+          <div class="control-group" data-field="cinemaSelect">
+            <label for="cinemaSelect">Choose cinema <span class="required">*</span></label>
+            <div class="select-wrap"><select id="cinemaSelect" name="cinemaSelect"><option value="PVR Cinemas · Screen 2">PVR Cinemas · Screen 2</option><option value="INOX Megaplex · Screen 4">INOX Megaplex · Screen 4</option><option value="Cinepolis · Screen 1">Cinepolis · Screen 1</option></select><span class="select-chevron" aria-hidden="true">⌄</span></div>
+          </div>
+
+          <div class="show-grid">
+            <div class="control-group" data-field="showDate">
+              <label for="showDate">Show date <span class="required">*</span></label>
+              <div class="input-wrap"><input id="showDate" name="showDate" type="date" aria-describedby="showDateError" required><span class="field-mark" id="showDateMark" aria-hidden="true"></span></div>
+              <small class="field-error" id="showDateError" aria-live="polite"></small>
+            </div>
+            <div class="control-group" data-field="showTime">
+              <label for="showTime">Show time <span class="required">*</span></label>
+              <div class="select-wrap"><select id="showTime" name="showTime" aria-describedby="showTimeError"><option value="10:30 AM">10:30 AM</option><option value="2:00 PM">2:00 PM</option><option value="5:15 PM">5:15 PM</option><option value="7:30 PM" selected>7:30 PM</option><option value="10:45 PM">10:45 PM</option></select><span class="select-chevron" aria-hidden="true">⌄</span><span class="field-mark" id="showTimeMark" aria-hidden="true"></span></div>
+              <small class="field-error" id="showTimeError" aria-live="polite"></small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel panel" aria-labelledby="bookingHeading">
+        <div class="section-heading"><div><p class="eyebrow">LET'S GET YOU SEATED</p><h2 id="bookingHeading">Complete your booking</h2><p class="section-subtitle">Enter your details and choose your seats.</p></div><span class="step-badge">STEP <b>1</b> / 2</span></div>
+
+        <form id="bookingForm" novalidate>
+          <div class="form-section-title"><span class="section-number">01</span><div><h3>Your details</h3><p>Your confirmation will be shown on the ticket.</p></div></div>
+          <div class="field-group" data-field="customerName">
+            <label for="customerName">Full name <span class="required">*</span></label>
+            <div class="input-wrap"><input id="customerName" name="customerName" type="text" placeholder="e.g. Satyanarayan " autocomplete="name" aria-describedby="customerNameError" required><span class="field-mark" aria-hidden="true"></span></div>
+            <small class="field-error" id="customerNameError" aria-live="polite"></small>
+          </div>
+          <div class="field-group" data-field="customerEmail">
+            <label for="customerEmail">Email address <span class="required">*</span></label>
+            <div class="input-wrap"><input id="customerEmail" name="customerEmail" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="customerEmailError" required><span class="field-mark" aria-hidden="true"></span></div>
+            <small class="field-error" id="customerEmailError" aria-live="polite"></small>
+          </div>
+          <div class="field-group" data-field="customerPhone">
+            <label for="customerPhone">Mobile number <span class="required">*</span></label>
+            <div class="input-wrap"><span class="country-code">+91</span><input id="customerPhone" name="customerPhone" type="tel" placeholder="10-digit mobile number" autocomplete="tel-national" inputmode="numeric" maxlength="10" aria-describedby="customerPhoneError" required><span class="field-mark" aria-hidden="true"></span></div>
+            <small class="field-error" id="customerPhoneError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-section-title seat-section-heading"><span class="section-number">02</span><div><h3>Choose your seats</h3><p>Tap seats to select or deselect them.</p></div></div>
+          <div class="seat-legend"><span><i class="legend-seat available"></i> Available</span><span><i class="legend-seat selected"></i> Selected</span><span><i class="legend-seat occupied"></i> Sold</span></div>
+          <div class="screen"><span>SCREEN THIS WAY</span></div>
+          <div class="seat-map" id="seatMap" aria-label="Choose available cinema seats"></div>
+          <div class="seat-price-legend"><span><i class="price-dot standard"></i> Silver ₹220</span><span><i class="price-dot prime"></i> Gold ₹280</span><span><i class="price-dot recliner"></i> Recliner ₹350</span></div>
+          <p class="seat-error" id="seatError" aria-live="polite"></p>
+
+          <div class="summary-box" aria-label="Booking price summary">
+            <div class="summary-line"><span>Tickets <small id="seatCountLabel">No seats selected</small></span><strong id="ticketSubtotal">₹0</strong></div>
+            <div class="summary-line"><span>Convenience fee <small>Per booking</small></span><strong id="convenienceFee">₹0</strong></div>
+            <div class="summary-total"><span>Total payable</span><strong id="totalPrice">₹0</strong></div>
+          </div>
+          <button class="confirm-button" type="submit"><span>Confirm booking</span><span class="button-arrow" aria-hidden="true">→</span></button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><span>© 2026 CineBook · Student project</span><span>Made for movie lovers <b>♥</b></span></footer>
+</body>
+</html>
