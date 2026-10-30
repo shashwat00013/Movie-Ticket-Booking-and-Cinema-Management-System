@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Movie Ticket</title>
-
-<link rel="stylesheet" href="css/ticket.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101014">
+  <meta name="description" content="Your CineBook ticket details.">
+  <title>CineBook | Your Ticket</title>
+  <link rel="stylesheet" href="css/ticket.css">
+  <script src="js/ticket.js" defer></script>
 </head>
-
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="booking.html" aria-label="CineBook home"><span class="brand-mark" aria-hidden="true">▶</span><span>Cine<span class="brand-accent">Book</span></span></a>
+    <a class="back-link" href="booking.html">← Back to booking</a>
+  </header>
+  <main class="ticket-page">
+    <section class="success-heading">
+      <span class="success-icon" aria-hidden="true">✓</span>
+      <p class="eyebrow">BOOKING CONFIRMED</p>
+      <h1>Movie night is <span>on.</span></h1>
+      <p>Your ticket is ready. Keep this page handy for your show.</p>
+    </section>
 
+    <article class="ticket-card" id="printableTicket" aria-labelledby="ticketMovie">
+      <div class="ticket-top"><div class="ticket-brand"><span class="brand-mark" aria-hidden="true">▶</span><span>Cine<span class="brand-accent">Book</span></span></div><span class="confirmed-pill"><i></i> CONFIRMED</span></div>
+      <div class="ticket-movie-art" id="ticketMovieArt"><div><small>YOUR MOVIE</small><h2 id="ticketMovie">Movie title</h2><p id="ticketMovieMeta">Movie · Language</p></div><span class="ticket-art-mark" aria-hidden="true">CB</span></div>
+      <div class="ticket-body">
+        <div class="ticket-main-details">
+          <div class="ticket-detail"><span>BOOKING ID</span><strong id="ticketBookingId">—</strong></div>
+          <div class="ticket-detail"><span>BOOKED BY</span><strong id="ticketName">—</strong></div>
+          <div class="ticket-detail"><span>EMAIL</span><strong id="ticketEmail">—</strong></div>
+          <div class="ticket-detail"><span>MOBILE</span><strong id="ticketPhone">—</strong></div>
+          <div class="ticket-detail"><span>CINEMA</span><strong id="ticketTheater">—</strong></div>
+          <div class="ticket-detail"><span>DATE</span><strong id="ticketDate">—</strong></div>
+          <div class="ticket-detail"><span>SHOW TIME</span><strong id="ticketTime">—</strong></div>
+          <div class="ticket-detail"><span>SEATS</span><strong class="ticket-seats" id="ticketSeats">—</strong></div>
+        </div>
+        <div class="ticket-price-breakdown">
+          <div><span>Ticket subtotal</span><strong id="ticketSubtotal">₹0</strong></div>
+          <div><span>Convenience fee</span><strong id="ticketFee">₹0</strong></div>
+        </div>
+        <div class="ticket-total"><span>Total payable <small>Includes convenience fee</small></span><strong id="ticketAmount">₹0</strong></div>
+        <section class="ticket-qr-panel" aria-labelledby="ticketQrHeading">
+          <div class="ticket-qr-copy">
+            <span class="qr-eyebrow">DIGITAL TICKET</span>
+            <h3 id="ticketQrHeading">Your booking QR</h3>
+            <p>Scan to view your booking details. The code updates automatically for the selected movie, show and seats.</p>
+          </div>
+          <div class="ticket-qr-frame">
+            <img id="ticketQr" alt="QR code containing this CineBook booking details" width="180" height="180" hidden>
+            <div id="ticketQrPlaceholder" class="ticket-qr-placeholder" aria-hidden="true">CB</div>
+          </div>
+          <p class="ticket-qr-status" id="ticketQrStatus" role="status" aria-live="polite">Preparing booking QR…</p>
+        </section>
+      </div>
+      <div class="ticket-perforation"><span></span><span></span></div>
+      <div class="ticket-footer"><div><small>BOOKING REFERENCE</small><strong id="ticketReference">—</strong></div><div class="ticket-stub">ENJOY THE SHOW <span>♥</span></div></div>
+    </article>
 
-<div class="ticket">
-
-
-<h1>🎟 Movie Ticket</h1>
-
-
-<hr>
-
-
-<h2>Avengers End Game</h2>
-
-
-<p><b>Theater:</b> PVR Cinemas</p>
-
-<p><b>Date:</b> 20 September 2026</p>
-
-<p><b>Time:</b> 7:30 PM</p>
-
-<p><b>Seats:</b> A1, A2</p>
-
-<p><b>Amount:</b> ₹600</p>
-
-
-<div class="booking-id">
-
-Booking ID: BMS45892
-
-</div>
-
-
-<button>
-Download Ticket
-</button>
-
-
-</div>
-
-
-
+    <div class="ticket-actions"><button type="button" class="primary-button" id="printTicket">Print / Save as PDF</button><a class="secondary-button" href="booking.html">Book another show</a></div>
+    <p class="ticket-status" id="ticketStatus" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="site-footer">© 2026 CineBook · Student project</footer>
 </body>
-
 </html>
