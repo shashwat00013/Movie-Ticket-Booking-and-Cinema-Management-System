@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaHub - Register</title>
+    <link rel="stylesheet" href="1.css">
+
+    <style>
+        .field-error {
+            display: none;
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--danger-color);
+        }
+
+        .login-form input:user-invalid {
+            border-color: var(--danger-color);
+        }
+
+        .login-form input:user-valid {
+            border-color: var(--success-color);
+        }
+
+        .login-form input:user-invalid:placeholder-shown ~ .error-empty {
+            display: block;
+        }
+
+        .login-form input:user-invalid:not(:placeholder-shown) ~ .error-invalid {
+            display: block;
+        }
+
+        .password-hint {
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 0.35rem;
+        }
+
+        #matchError {
+            display: none;
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--danger-color);
+        }
+    </style>
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-login">
+                <h1>🎬 CinemaHub</h1>
+                <p>Create Your Account</p>
+            </div>
+
+            <form class="login-form" id="registerForm" novalidate>
+
+                <!-- Full Name: letters & spaces only -->
+                <div class="form-group">
+                    <label for="regName">Full Name:</label>
+                    <input type="text" id="regName" placeholder="e.g. Rahul Sharma"
+                        autocomplete="name"
+                        pattern="[A-Za-z ]{3,}"
+                        title="Name must contain letters only (min 3 characters)"
+                        required>
+                    <small class="field-error error-empty">Full name is required.</small>
+                    <small class="field-error error-invalid">Name must contain letters only (min 3 characters).</small>
+                </div>
+
+                <!-- Username: starts with letter, letters/numbers/_ and . allowed, max 15 -->
+                <div class="form-group">
+                    <label for="regUsername">Username:</label>
+                    <input type="text" id="regUsername" placeholder="e.g. hy_there11.11"
+                        autocomplete="username"
+                        pattern="[a-zA-Z][a-zA-Z0-9_.]{2,14}"
+                        title="Must start with a letter, can include letters, numbers, _ and . (max 15 characters)"
+                        maxlength="15"
+                        required>
+                    <small class="field-error error-empty">Username is required.</small>
+                    <small class="field-error error-invalid">Must start with a letter, use letters/numbers/_ /. only (max 15 chars).</small>
+                </div>
+
+                <!-- Gmail only -->
+                <div class="form-group">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" placeholder="example@gmail.com"
+                        autocomplete="email"
+                        pattern="[a-zA-Z0-9._%+\-]+@gmail\.com"
+                        title="Must be a valid @gmail.com address"
+                        required>
+                    <small class="field-error error-empty">Email is required.</small>
+                    <small class="field-error error-invalid">Must be a valid @gmail.com address.</small>
+                </div>
+
+                <!-- Strong password -->
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" placeholder="Create a strong password"
+                        autocomplete="new-password"
+                        pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$!%*?&amp;]).{8,}"
+                        title="Password rules: min 8 chars, 1 uppercase, 1 number, 1 special character (@#$!%*?&)"
+                        required>
+                    <small class="field-error error-empty">Password is required.</small>
+                    <small class="field-error error-invalid">Must be 8+ chars with 1 uppercase, 1 number &amp; 1 special character (@#$!%*?&amp;).</small>
+                    <p class="password-hint">e.g. Admin@123</p>
+                </div>
+
+                <!-- Confirm password -->
+                <div class="form-group">
+                    <label for="regConfirm">Confirm Password:</label>
+                    <input type="password" id="regConfirm" placeholder="Re-enter your password"
+                        autocomplete="new-password"
+                        required>
+                    <small class="field-error error-empty">Please confirm your password.</small>
+                    <small id="matchError">Passwords do not match.</small>
+                </div>
+
+                <button type="submit" class="btn btn-login">Register</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Already registered? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="toast.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>
