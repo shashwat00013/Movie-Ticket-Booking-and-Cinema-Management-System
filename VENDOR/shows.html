@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Show Management</title>
+    <link rel="stylesheet" href="CSS/shows.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>CineBook</h2>
+    <nav>
+        <a href="./dashboard.html">▦ Dashboard</a>
+        <a href="./screens.html">▤ Screens</a>
+        <a href="./movies.html">🎬 Movies</a>
+        <a href="./shows.html" class="active">▦ Shows</a>
+        <a href="./bookings.html">🎟 Bookings</a>
+        <a href="./profile.html">👤 Profile & Settings</a>
+        <a href="./revenue.html">₹ Revenue</a>
+        <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+        <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+    </nav>
+</div>
+
+<main class="main-content">
+
+    <header class="topbar">
+        <div>
+            <h2>Show Management</h2>
+            <p>Schedule and manage your movie shows.</p>
+        </div>
+        <button id="addShowBtn">+ Add Show</button>
+    </header>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <p>Total Shows</p>
+            <h2 id="totalShows">0</h2>
+        </div>
+        <div class="stat-card">
+            <p>Today's Shows</p>
+            <h2 id="todayShows">0</h2>
+        </div>
+        <div class="stat-card">
+            <p>Upcoming Shows</p>
+            <h2 id="upcomingShows">0</h2>
+        </div>
+    </section>
+
+    <section class="show-section">
+        <div class="filter-bar">
+            <input type="text" id="searchShow"
+                   placeholder="Search movie or screen...">
+
+            <select id="screenFilter">
+                <option value="all">All Screens</option>
+            </select>
+        </div>
+
+        <div class="show-grid" id="showGrid"></div>
+    </section>
+
+</main>
+
+<script src="JS/shows.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Revenue Management</title>
+
+    <link rel="stylesheet" href="CSS/revenue.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>CineBook</h2>
+
+    <nav>
+        <a href="./dashboard.html">▦ Dashboard</a>
+        <a href="./screens.html">▤ Screens</a>
+        <a href="./movies.html">🎬 Movies</a>
+        <a href="./shows.html">▦ Shows</a>
+        <a href="./bookings.html">🎟 Bookings</a>
+        <a href="./revenue.html" class="active">₹ Revenue</a>
+        <a href="./profile.html">👤 Profile & Settings</a>
+        <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+        <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+
+    </nav>
+</div>
+
+<main class="main-content">
+
+    <header class="topbar">
+        <div>
+            <h2>Revenue Management</h2>
+            <p>Track your theatre earnings and transactions.</p>
+        </div>
+    </header>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <p>Total Revenue</p>
+            <h2 id="totalRevenue">₹0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Today's Revenue</p>
+            <h2 id="todayRevenue">₹0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Confirmed Bookings</p>
+            <h2 id="totalTransactions">0</h2>
+        </div>
+    </section>
+
+    <section class="revenue-section">
+        <h3>Revenue Transactions</h3>
+
+        <div class="filter-bar">
+            <input type="text" id="searchRevenue"
+                   placeholder="Search booking or movie...">
+
+            <select id="revenueFilter">
+                <option value="all">All Transactions</option>
+                <option value="today">Today</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Movie</th>
+                        <th>Booking Date</th>
+                        <th>Seats</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="revenueTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="JS/revenue.js"></script>
+</body>
+</html>

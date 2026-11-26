@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Theatre Management</title>
+
+    <link rel="stylesheet" href="CSS/theatres.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">▶ Cine<span>Book</span></div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html">▦ Dashboard</a>
+            <a href="./screens.html" class="menu-item">▤ Screens</a>
+            <a href="./movies.html">🎬 Movies</a>
+            <a href="./shows.html">▦ Shows</a>
+            <a href="./bookings.html">🎟 Bookings</a>
+            <a href="./profile.html" class="menu-item">👤 Profile & Settings</a>
+            <a href="./revenue.html" class="menu-item"><span>₹</span> Revenue</a>
+            <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+            <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="avatar">VG</div>
+            <div>
+                <h4>Theatre Partner</h4>
+                <p>Vendor Account</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Theatre Management</h2>
+                <p>Manage your cinema locations</p>
+            </div>
+            <div class="profile">VG &nbsp; Vendor</div>
+        </header>
+
+        <section class="page-content">
+
+            <div class="page-heading">
+                <div>
+                    <h1>My Theatres</h1>
+                    <p>Manage and monitor your theatre locations.</p>
+                </div>
+
+                <button id="addTheatreBtn">+ Add Theatre</button>
+            </div>
+
+            <div class="theatre-stats">
+                <div class="stat-card">
+                    <p>Total Theatres</p>
+                    <h2 id="totalTheatres">2</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Active Theatres</p>
+                    <h2 id="activeTheatres">2</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Screens</p>
+                    <h2>8</h2>
+                </div>
+            </div>
+
+            <div class="theatre-grid" id="theatreGrid">
+
+                <div class="theatre-card">
+                    <div class="theatre-icon">🎬</div>
+                    <span class="status">Active</span>
+                    <h3>PVR Cinemas</h3>
+                    <p>Mathura, Uttar Pradesh</p>
+                    <div class="theatre-info">
+                        <span>4 Screens</span>
+                        <span>320 Seats</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                <div class="theatre-card">
+                    <div class="theatre-icon">🎬</div>
+                    <span class="status">Active</span>
+                    <h3>INOX Cinemas</h3>
+                    <p>Agra, Uttar Pradesh</p>
+                    <div class="theatre-info">
+                        <span>4 Screens</span>
+                        <span>280 Seats</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="JS/theatres.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Vendor Login</title>
+    <link rel="stylesheet" href="CSS/vendor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="play-icon">▶</span>
+            Cine<span>Book</span>
+        </div>
+        <div class="nav-right">
+            <span class="partner-label">PARTNER PORTAL</span>
+            <a href="#" class="support-link">Help & Support</a>
+        </div>
+    </nav>
+    <!-- Main Login Section -->
+    <main class="login-wrapper">
+        <div class="login-card">
+            <div class="welcome-tag">
+                <span></span>
+                CINEBOOK FOR PARTNERS
+            </div>
+            <h1>Welcome <span>Back.</span></h1>
+            <p class="subtitle">
+                Manage your cinema, track bookings
+                and grow your business with CineBook.
+            </p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your registered email"
+                    pattern="[A-Za-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com)"
+                    title="Only Gmail, Yahoo, Outlook and Hotmail addresses are allowed."
+                    required
+                    >
+                </div>
+                <div class="form-group">
+                    <div class="password-heading">
+                        <label for="password">Password</label>
+                        <a href="#" id="forgotPassword">
+                            Forgot password?
+                        </a>
+                        </div>
+                        <div class="password-box">
+                        <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}"
+                        title="Minimum 8 characters, one uppercase, one lowercase, one number and one special character."
+                        required
+                        >
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-btn"
+                        >
+                            Show
+                        </button>
+                    </div>
+                </div>
+                <div class="remember-row">
+                    <label class="remember-label">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                </div>
+                <button type="submit" class="login-btn">
+                    Sign In
+                    <span>→</span>
+                </button>
+            </form>
+            <div class="divider">
+                <span>SECURE PARTNER ACCESS</span>
+            </div>
+            <div class="register-section">
+                <p>New to CineBook?</p>
+                <a href="vendor-register.html" id="contactSupport">
+                    Become a Theatre Partner →
+                </a>
+            </div>
+        </div>
+        <div class="bottom-text">
+            © 2026 CineBook. All rights reserved.
+        </div>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="JS/vendor.js"></script>
+</body>
+</html>

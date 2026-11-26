@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Booking Management</title>
+    <link rel="stylesheet" href="CSS/bookings.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>CineBook</h2>
+
+    <nav>
+        <a href="./dashboard.html">▦ Dashboard</a>
+        <a href="./screens.html">▤ Screens</a>
+        <a href="./movies.html">🎬 Movies</a>
+        <a href="./shows.html">▦ Shows</a>
+        <a href="./bookings.html" class="active">🎟 Bookings</a>
+        <a href="./profile.html" class="menu-item">👤 Profile & Settings</a>
+        <a href="./revenue.html" class="menu-item"><span>₹</span> Revenue</a>
+        <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+        <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+    </nav>
+</div>
+
+<main class="main-content">
+    <header class="topbar">
+        <div>
+            <h2>Booking Management</h2>
+            <p>Manage and track your theatre bookings.</p>
+        </div>
+    </header>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <p>Total Bookings</p>
+            <h2 id="totalBookings">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Confirmed</p>
+            <h2 id="confirmedBookings">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Cancelled</p>
+            <h2 id="cancelledBookings">0</h2>
+        </div>
+    </section>
+
+    <section class="booking-section">
+
+        <div class="filter-bar">
+            <input type="text" id="searchBooking"
+                placeholder="Search customer or movie...">
+
+            <select id="bookingFilter">
+                <option value="all">All Bookings</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Customer</th>
+                        <th>Movie</th>
+                        <th>Show Date</th>
+                        <th>Seats</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bookingTable"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="JS/bookings.js"></script>
+</body>
+</html>

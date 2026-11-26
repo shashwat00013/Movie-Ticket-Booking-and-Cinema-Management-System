@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Screen Management</title>
+
+    <link rel="stylesheet" href="CSS/screens.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            ▶ Cine<span>Book</span>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html">▦ Dashboard</a>
+            <a href="screens.html" class="active">▤ Screens</a>
+            <a href="./movies.html">🎬 Movies</a>
+            <a href="./shows.html">▦ Shows</a>
+            <a href="./bookings.html">🎟 Bookings</a>
+            <a href="./profile.html" class="menu-item">👤 Profile & Settings</a>
+            <p class="menu-heading">BUSINESS</p>
+            <a href="./revenue.html" class="menu-item"><span>₹</span> Revenue</a>
+            <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+            <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="avatar">VG</div>
+            <div>
+                <h4>Theatre Partner</h4>
+                <p>Vendor Account</p>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Screen Management</h2>
+                <p>Manage your cinema screens and seating capacity.</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">VG</div>
+                Vendor
+            </div>
+
+        </header>
+
+
+        <section class="page-content">
+
+            <!-- Heading -->
+
+            <div class="page-heading">
+
+                <div>
+                    <h1>My Screens</h1>
+                    <p>Manage screens across your theatres.</p>
+                </div>
+
+                <button id="addScreenBtn">
+                    + Add Screen
+                </button>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Total Screens</p>
+                    <h2 id="totalScreens">4</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Seats</p>
+                    <h2 id="totalSeats">600</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Active Screens</p>
+                    <h2 id="activeScreens">4</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="filter-section">
+
+                <input
+                    type="text"
+                    id="searchScreen"
+                    placeholder="Search screen..."
+                >
+
+                <select id="theatreFilter">
+                    <option value="all">All Theatres</option>
+                    <option value="PVR Cinemas">PVR Cinemas</option>
+                    <option value="INOX Cinemas">INOX Cinemas</option>
+                </select>
+            </div>
+            <!-- Screen Cards -->
+            <div class="screen-grid" id="screenGrid">
+            </div>
+                
+
+        </section>
+    </main>
+    <script src="JS/screens.js"></script>
+</body>
+</html>

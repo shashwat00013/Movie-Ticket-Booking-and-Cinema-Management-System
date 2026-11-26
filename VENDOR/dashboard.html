@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Vendor Dashboard</title>
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="play-icon">▶</span>
+            Cine<span>Book</span>
+        </div>
+        <p class="menu-heading">MAIN MENU</p>
+        <nav class="sidebar-menu">
+            <a href="./dashboard.html" class="menu-item active">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="./screens.html" class="menu-item">
+                <span>▤</span> Screens
+            </a>
+            <a href="./movies.html" class="menu-item">
+                <span>🎬</span> Movies
+            </a>
+            <a href="./shows.html" class="menu-item">
+                <span>▦</span> Shows
+            </a>
+            <a href="./bookings.html" class="menu-item">
+                <span>🎟</span> Bookings
+            </a>
+            <p class="menu-heading">BUSINESS</p>
+            <a href="./revenue.html" class="menu-item"> <span>₹</span> Revenue</a>
+            <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+            <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+            <a href="./profile.html" class="menu-item">👤 Profile & Settings</a>
+            
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="vendor-avatar">VG</div>
+            <div>
+                <h4>Theatre Partner</h4>
+                <p>Vendor Account</p>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="topbar">
+            <div>
+                <h2>Dashboard</h2>
+                <p>Welcome back! Here's your cinema overview.</p>
+            </div>
+            <div class="topbar-right">
+                <button class="notification-btn">♧</button>
+                <div class="profile">
+                    <div class="profile-avatar">VG</div>
+                    <div>
+                        <h4>Vendor</h4>
+                        <p>Partner Account</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Dashboard Body -->
+        <section class="dashboard-body">
+            <div class="page-heading">
+                <div>
+                    <h1>Overview</h1>
+                    <p>Track your cinema performance.</p>
+                </div>
+                <button class="date-btn">📅 Today</button>
+            </div>
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Bookings</span>
+                        <span class="stat-icon red">🎟</span>
+                    </div>
+                    <h2>1,248</h2>
+                    <p class="positive">↑ 12.5% <span>vs last month</span></p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Revenue</span>
+                        <span class="stat-icon green">₹</span>
+                    </div>
+                    <h2>₹84,500</h2>
+                    <p class="positive">↑ 8.2% <span>vs last month</span></p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Active Shows</span>
+                        <span class="stat-icon blue">🎬</span>
+                    </div>
+                    <h2>12</h2>
+                    <p class="neutral">Currently running</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Occupancy Rate</span>
+                        <span class="stat-icon purple">▥</span>
+                    </div>
+                    <h2>76%</h2>
+                    <p class="positive">↑ 5.4% <span>vs last month</span></p>
+                </div>
+            </div>
+            <!-- Analytics -->
+            <div class="content-grid">
+                <div class="panel revenue-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Revenue Overview</h3>
+                            <p>Your earnings performance</p>
+                        </div>
+                        <select>
+                            <option>This Week</option>
+                            <option>This Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="chart-bars">
+                            <div style="height:40%">
+                                <span>Mon</span>
+                            </div>
+                            <div style="height:65%">
+                                <span>Tue</span>
+                            </div>
+                            <div style="height:50%">
+                                <span>Wed</span>
+                            </div>
+                            <div style="height:85%">
+                                <span>Thu</span>
+                            </div>
+                            <div style="height:60%">
+                                <span>Fri</span>
+                            </div>
+                            <div style="height:95%">
+                                <span>Sat</span>
+                            </div>
+                            <div style="height:75%">
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Summary -->
+                <div class="panel summary-panel">
+                    <h3>Quick Summary</h3>
+                    <p>Today's performance</p>
+                    <div class="summary-item">
+                        <span>Today's Bookings</span>
+                        <strong>156</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Today's Revenue</span>
+                        <strong>₹12,450</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Upcoming Shows</span>
+                        <strong>08</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Available Seats</span>
+                        <strong>245</strong>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent Bookings -->
+            <div class="panel bookings-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>Recent Bookings</h3>
+                        <p>Latest customer transactions</p>
+                    </div>
+                    <a href="#">View All →</a>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Movie</th>
+                                <th>Show Time</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#CB1024</td>
+                                <td>Rahul Sharma</td>
+                                <td>Avengers</td>
+                                <td>06:00 PM</td>
+                                <td>₹500</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#CB1025</td>
+                                <td>Priya Singh</td>
+                                <td>Interstellar</td>
+                                <td>07:30 PM</td>
+                                <td>₹750</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#CB1026</td>
+                                <td>Aman Verma</td>
+                                <td>Inception</td>
+                                <td>09:00 PM</td>
+                                <td>₹350</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="JS/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Movie Management</title>
+    <link rel="stylesheet" href="CSS/movies.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<div class="sidebar">
+    <h2>CineBook</h2>
+    <nav>
+        <a href="dashboard.html">▦ Dashboard</a>
+        <a href="screens.html">▤ Screens</a>
+        <a href="movies.html" class="active">🎬 Movies</a>
+        <a href="./shows.html">▦ Shows</a>
+        <a href="./bookings.html">🎟 Bookings</a>
+        <a href="./profile.html" class="menu-item">👤 Profile & Settings</a>
+        <a href="./revenue.html" class="menu-item"><span>₹</span> Revenue</a>
+        <a href="./reports.html" class="menu-item"><span>▥</span> Reports</a>
+        <a href="./settings.html" class="menu-item"><span>⚙</span> Settings</a>
+    </nav>
+</div>
+
+<main class="main-content">
+
+    <header class="topbar">
+        <h2>Movie Management</h2>
+        <button id="addMovieBtn">+ Add Movie</button>
+    </header>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <p>Total Movies</p>
+            <h2 id="totalMovies">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Now Showing</p>
+            <h2 id="nowShowing">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Coming Soon</p>
+            <h2 id="comingSoon">0</h2>
+        </div>
+    </section>
+
+    <section class="movie-section">
+
+        <div class="filter-bar">
+            <input type="text" id="searchMovie" placeholder="Search movie...">
+
+            <select id="statusFilter">
+                <option value="all">All Movies</option>
+                <option value="Now Showing">Now Showing</option>
+                <option value="Coming Soon">Coming Soon</option>
+            </select>
+        </div>
+
+        <div class="movie-grid" id="movieGrid"></div>
+
+    </section>
+
+</main>
+<script src="JS/movies.js"></script>
+</body>
+</html>
